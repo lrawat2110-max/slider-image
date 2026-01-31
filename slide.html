@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider{
+            width: 400px;
+            height: 400px;
+            min-width: 400px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            box-shadow: 5px 5px 10px black;
+            overflow: hidden;
+            
+            
+           
+                img{
+                    width: 400px;
+                    
+                }
+            
+            
+        }
+        button{
+            position: absolute;
+            top: 30%;
+            padding: 10px;
+            
+
+        }
+        .left{
+            left:6px
+        }
+        .right{
+            right:26px
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div id="slide" style="display:flex; transition: all 1s ease;">
+            <img src="https://img.freepik.com/free-photo/gradient-iphone-wallpaper-oil-bubble-water-background_53876-176849.jpg">
+            <img src="https://img.freepik.com/free-photo/digital-art-style-sky-landscape-with-moon_23-2151120793.jpg">
+            <img src="https://img.freepik.com/free-photo/gradient-iphone-wallpaper-oil-bubble-water-background_53876-176849.jpg">
+            <img src="https://img.freepik.com/free-photo/digital-art-style-sky-landscape-with-moon_23-2151120793.jpg">
+            <img src="https://img.freepik.com/free-photo/gradient-iphone-wallpaper-oil-bubble-water-background_53876-176849.jpg">
+            <img src="https://img.freepik.com/free-photo/digital-art-style-sky-landscape-with-moon_23-2151120793.jpg">
+            <img src="https://img.freepik.com/free-photo/gradient-iphone-wallpaper-oil-bubble-water-background_53876-176849.jpg">
+            
+        </div>
+    </div>
+    <center>
+    <button onclick="slide('prev')" class="left">previous</button>
+    <button onclick="slide('next')" class="right">next</button>
+    </center>
+    <script>
+        let margins = 0
+        function slide(pos) {
+            if(pos=="next" && margins>-2400){
+                margins = margins-400;
+                document.getElementById("slide").style.marginLeft = margins+"px";
+            }
+            if(pos=="prev" && margins<0){
+                margins = margins+400;
+                document.getElementById("slide").style.marginLeft = margins+"px";
+            }
+        }
+    </script>
+</body>
+</html>
